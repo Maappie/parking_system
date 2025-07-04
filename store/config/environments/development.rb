@@ -40,6 +40,19 @@ Rails.application.configure do
   # Set localhost to be used by links generated in mailer templates.
   config.action_mailer.default_url_options = { host: "localhost", port: 3000 }
 
+  # === Gmail SMTP settings start ===
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              "smtp.gmail.com",
+    port:                 587,
+    domain:               "gmail.com",
+    user_name:            "renzmapa0321@gmail.com",      # <-- use your Gmail address
+    password:             "pwhc smay dbdd edik",    # <-- use the App Password you generated
+    authentication:       "plain",
+    enable_starttls_auto: true
+  }
+  # === Gmail SMTP settings end ===
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 

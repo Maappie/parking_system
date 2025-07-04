@@ -10,8 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_07_01_061436) do
-  create_table "cars", force: :cascade do |t|
+ActiveRecord::Schema[8.0].define(version: 2025_07_03_012949) do
+  create_table "accounts", force: :cascade do |t|
     t.string "car_model"
     t.string "car_type"
     t.string "plate_number"
@@ -19,6 +19,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_07_01_061436) do
     t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "verification_code"
+    t.boolean "verified", default: false
   end
 
   create_table "parkings", force: :cascade do |t|
